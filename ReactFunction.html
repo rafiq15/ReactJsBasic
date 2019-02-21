@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function HelloWorld(){
+        return (<h1>Hello World...</h1>);
+      }
+      function VariablePrint(props){
+        return (
+          <div>
+            <h1>Hi {props.name}</h1>
+
+          </div>
+        );
+      }
+
+      function MyAge(props){
+        return(
+        <div>
+          <h2>My Age:{props.age}. Adult? {props.adult}</h2>
+          <Address address="Mohakhali" />
+       </div>
+        );
+      }
+      function Address(props){
+        return(
+          <h2>Village:{props.address}</h2>
+        );
+      }
+      class MyAgeClass extends React.Component{
+        render(){
+          return(<h1>My Name is Masud</h1>)
+        }
+      }
+      ReactDOM.render(
+        <div>
+          <HelloWorld/>
+          <VariablePrint name="Aman"/>
+          <MyAge age="22" adult="yes"/>
+          <MyAgeClass />
+        </div>
+          ,
+
+        document.getElementById('root')
+      );
+
+    </script>
+
+  </body>
+</html>
